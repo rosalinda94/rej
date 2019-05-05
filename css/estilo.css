@@ -2,54 +2,17 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif
   }
 
-header{
-  background-color: #000;
-  overflow: hidden;
-}
-
-header div.logo,
-footer div.empresa{
-  float: left;
-  width: 500px;
-}
-
-header div.logo img{
-  width: 80px;
-  padding: 10px 0px 10px 20px;
-}
-
-header div.menu{
-  float: right;
-  width: 500px;
-}
-
-header div.menu ul{
-  overflow: hidden;
-  padding-top: 10px;
-}
-
-header div.menu ul li{
-  float: left;
-  list-style-type: none;
-}
-
-header div.menu ul li a{
-  color: #FFF;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding-right: 20px;
-  font-weight: bold;
-}
-
-header div.menu ul li a:hover{
-  color: orange;
-}
-
 .home {
-  background-image: url(../img/home.jpg);
+  background-image: url(../img/fondo.jpg);
+  background-size: contain;
   height: 90vh;
+}
+
+.home h1 {
+  color: #fff;
 }
 
 .nosotros {

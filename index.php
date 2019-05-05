@@ -8,14 +8,15 @@ include_once ("header.php");
   <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
     <title>nombre</title>
   </head>
 
   <body>
     <section class="home">
       <article>
-        <h1>
-          logo principal
+        <h1 clas="logofinal">
+          BUDDY
         </h1>
         <h1>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

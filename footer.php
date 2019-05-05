@@ -6,13 +6,14 @@ include_once ("header.php");
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/header.css">
     <title></title>
   </head>
   <body>
     <footer>
       <nav>
       <div class="empresa">
-        <p>2019 Nuestra empresa. Todos los derechos reservados</p>
+        <p>2019 BUDDY. Todos los derechos reservados</p>
       </div>
       <div class="redes">
         <ul>

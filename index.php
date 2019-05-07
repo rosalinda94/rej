@@ -7,19 +7,20 @@ include_once ("header.php");
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilo.css">
-    <title>nombre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <title>BUDDY</title>
   </head>
 
   <body>
     <section class="home">
       <article>
-        <h1 clas="logofinal">
-          BUDDY
-        </h1>
-        <h1>
+        <img src="img/logo2-01.png" alt="logo">
+        <h1 class="web">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </h1>
+        <h1 class="mobile">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         </h1>
       </article>
     </section>
@@ -36,7 +37,7 @@ include_once ("header.php");
     <section class="contacto">
         <div class="izquierda">
         <article class="contactos">
-          <h2>Contactanos</h2>
+          <h2>Conoce más</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
         </article>
         <article class="datos">
@@ -49,27 +50,30 @@ include_once ("header.php");
       </div>
 
       <div class="derecha">
-        <form>
-  <div class="form-row">
-    <div class="form-group col-md-2">
-      <label for="inputPassword4">Nombre</label>
-      <input type="text" class="form-control" id="inputPassword4" placeholder="Ingresar nombre">
+        <h2>contactanos</h2>
+        <form class="mi-mensaje">
+  <div class="form-contacto">
+    <div class="nombres">
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Nombre</label>
+        <input type="text" class="form-control" id="inputPassword4" placeholder="Ingresar nombre">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Apellido</label>
+        <input type="text" class="form-control" id="inputPassword4" placeholder="Ingresar apellido">
+      </div>
     </div>
-    <div class="form-group col-md-2">
-      <label for="inputPassword4">Apellido</label>
-      <input type="text" class="form-control" id="inputPassword4" placeholder="Ingresar apellido">
-    </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-12">
       <label for="inputEmail4">Email</label>
       <input type="email" class="form-control" id="inputEmail4" placeholder="Ingresar Email">
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-8">
       <label for="inputEmail4">Comentario</label>
-      <textarea name="name" rows="4" cols="50"></textarea>
+      <textarea name="name" rows="4" cols="50" class="comentario">Escribí tu compentario acá...</textarea>
     </div>
   </div>
 
-  <button type="submit" class="btn btn-primary">Enviar</button>
+  <button type="submit" class="primary">Enviar</button>
 </form>
       </div>
 

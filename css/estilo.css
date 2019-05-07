@@ -2,30 +2,337 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Fira Sans', sans-serif
+    font-family: 'Fira Sans', sans-serif;
   }
 
-.home {
+
+/* ------------------------- Inicio Header & Footer ------------------------- */
+.header,
+.footer{
+  background: #192441;
+  width: 100%;
+  height: 10vh;
+  overflow: hidden;
+  color: white;
+}
+
+.footer{
+  padding: 1%;
+  display: block;
+  height: 6vh;
+}
+
+.logo,
+.empresa{
+  float: left;
+  display: block;
+}
+
+.logo li a{
+  padding: 15%;
+}
+
+.links,
+.redes{
+  float: right;
+  text-decoration: none;
+}
+
+.redes a i{
+  color: white;
+}
+
+.redes a i:hover{
+  color: #eebd74;
+}
+
+nav ul li {
+  float: left;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  list-style:none;
+  text-transform: uppercase;
+}
+
+nav ul li a {
+  display: block;
+  padding: 20px 10px;
+  color: #fff;
+}
+
+nav ul li a:hover {
+  color: #eebd74;
+
+}
+
+/* -------------------------  FIN Header & Footer ------------------------- */
+
+/* ------------------------- Home  ------------------------ */
+.home{
   background-image: url(../img/fondo.jpg);
-  background-size: contain;
+  background-size: cover;
   height: 90vh;
+  padding: 13%;
+  margin: 0;
+}
+
+.home img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+  padding-bottom: 5%;
 }
 
 .home h1 {
   color: #fff;
+  text-align: center;
 }
 
+.home .mobile {
+  display: none;
+}
+
+/* ------------------------- Nosotros  ------------------------ */
 .nosotros {
-  padding: 5% 10% 5% 10%;
+  padding: 5% 25% 5% 25%;
+  color: #dd816d;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .nosotros h2 {
   text-align: center;
   font-size: 50px;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .nosotros p {
   text-align: center;
+  text-justify:auto;
   margin-top: 2.5%;
+  font-weight: 300;
 }
+
+/* ------------------------- Contactanos  ------------------------ */
+
+.contacto {
+  background-image: url(../img/fondo-contacto.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  height: 100vh;
+}
+
+.contacto .izquierda {
+color: #fff;
+margin-right:5%;
+}
+
+.contacto .izquierda .contactos h2 {
+text-transform: uppercase;
+font-weight: bold;
+}
+
+.contacto .izquierda .contactos p {
+  font-weight: 300;
+}
+
+.contacto .izquierda .datos {
+  padding-top: 2.5%;
+}
+.contacto .izquierda .datos h4 {
+  font-weight: 500;
+}
+
+.contacto .izquierda .datos p{
+  font-weight: 300;
+}
+
+.contacto .derecha{
+background-color: #fff;
+padding: 2.5%;
+width: 70%;
+border-radius: 10%;
+color:#878786;
+font-weight: 300;
+}
+
+.contacto .derecha h2 {
+  color:#dd816d;
+  text-transform: uppercase;
+}
+
+.contacto .derecha .nombres{
+  display: flex;
+}
+
+
+.primary {
+  background-color: #dd816d;
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  width: 30%;
+  padding: 2%;
+  border-radius: 5%;
+  box-shadow: 3px 3px 10px  #878786;
+}
+
+.primary:hover {
+  background-color: #eebd74;
+}
+
+/* ------------------------- Fin Home Nosotros & Contactanos ------------------------ */
+
+/* ------------------------- Inicio Login & Registro ------------------------ */
+.login,
+.register{
+  height: 84vh;
+  background-image: url(../img/fondo.jpg);
+  background-size: contain;
+  text-align: center;
+}
+
+.login {
+  padding: 4%;
+}
+.register {
+  padding: 2%;
+}
+
+#login,
+#register{
+  margin: 0 auto;
+  width: 420px;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 10%;
+  padding: 2% ;
+}
+
+.login h2,
+.register h2{
+  color: #dd816d;
+  font-weight: bold;
+}
+
+#boton,
+#boton-face{
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  width:100%;
+  color: #ffffff;
+  box-shadow: 3px 3px 10px  #878786;
+}
+
+#boton{
+  background-color: #dd816d;
+}
+
+#boton-face{
+  background-color: #5385E3;
+}
+
+#boton:hover {
+  background-color: #eebd74;
+}
+
+#boton-face:hover {
+  background-color: #c3ceda;
+}
+
+.condiciones{
+  font-size: 12px;
+  color: #525A6B;
+}
+
+.login p,
+.register p{
+  margin: 1%;
+}
+/* ------------------------- Fin Login & Registro ------------------------ */
+
+/* ------------------------- Inicio Responsive celular ------------------------ */
+@media (max-width:700px){
+
+/* ------------------------- Home  ------------------------ */
+  .home{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home img {
+  width: 80%;
+}
+.home h1 {
+  font-size: 30px;
+}
+
+.home .mobile {
+  display: block;
+  text-align: center;
+}
+
+.home .web {
+  display: none;
+}
+
+/* ------------------------- Nosotros  ------------------------ */
+.nosotros {
+  padding: 8%;
+}
+
+.nosotros h2 {
+  font-size: 30px;
+}
+
+/* ------------------------- Contactanos  ------------------------ */
+
+
+.contacto {
+  display:block;
+  background-size: cover;
+  height: 140vh;
+
+}
+.contacto .izquierda {
+margin: 0;
+text-align: center;
+padding: 8%;
+}
+
+.contacto .derecha{
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding:5%;
+}
+
+.contacto .derecha h2{
+text-align: center;
+}
+
+.form-contacto{
+align: center;
+}
+.comentario{
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #878786;
+}
+
+/* -------------------------  Header & Footer ------------------------- */
+
+
+
+/* ------------------------- Login & Registro ------------------------ */

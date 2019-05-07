@@ -5,7 +5,6 @@
     font-family: 'Fira Sans', sans-serif;
   }
 
-
 /* ------------------------- Inicio Header & Footer ------------------------- */
 .header,
 .footer{
@@ -62,14 +61,14 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #eebd74;
-
 }
+
 
 /* -------------------------  FIN Header & Footer ------------------------- */
 
 /* ------------------------- Home  ------------------------ */
 .home{
-  background-image: url(../img/fondo.jpg);
+  background-image:  url(../img/fondo.jpg);
   background-size: cover;
   height: 90vh;
   padding: 13%;
@@ -89,7 +88,8 @@ nav ul li a:hover {
   text-align: center;
 }
 
-.home .mobile {
+.home .mobile,
+.rmobile{
   display: none;
 }
 
@@ -189,7 +189,7 @@ font-weight: 300;
   background-color: #eebd74;
 }
 
-/* ------------------------- Fin Home Nosotros & Contactanos ------------------------ */
+/* ------------------------- Fin Home Nosotros & Contactanos ---------------- */
 
 /* ------------------------- Inicio Login & Registro ------------------------ */
 .login,
@@ -260,15 +260,15 @@ font-weight: 300;
 }
 /* ------------------------- Fin Login & Registro ------------------------ */
 
-/* ------------------------- Inicio Responsive celular ------------------------ */
+/* ------------------------- Inicio Responsive celular --------------------- */
 @media (max-width:700px){
 
 /* ------------------------- Home  ------------------------ */
-  .home{
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.home{
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .home img {
@@ -287,6 +287,8 @@ font-weight: 300;
   display: none;
 }
 
+
+
 /* ------------------------- Nosotros  ------------------------ */
 .nosotros {
   padding: 8%;
@@ -302,7 +304,7 @@ font-weight: 300;
 .contacto {
   display:block;
   background-size: cover;
-  height: 140vh;
+  height: 150vh;
 
 }
 .contacto .izquierda {
@@ -333,6 +335,43 @@ align: center;
 
 /* -------------------------  Header & Footer ------------------------- */
 
+.links{
+  display: none;
+}
 
+.rmobile li ul{
+  display: none;
+  position: absolute;
+  min-width: 140px;
+}
+
+.rmobile li:hover ul{
+  display: block;
+}
+.rmobile li ul li {
+  position: relative;
+}
+.rmobile {
+  display: block;
+  float: right;
+}
+.hamburgesa {
+  padding: 5px 80px;
+}
+.hamburgesa ul li {
+  width: 90%;
+  text-align: center;
+  margin-top: 1%;
+}
+
+.rmobile ul li a {
+  display: block;
+  color: #fff;
+  background-color: #dd816d;
+}
 
 /* ------------------------- Login & Registro ------------------------ */
+#login,
+#register{
+  width: 380px;
+}

@@ -44,7 +44,7 @@ include_once ("header.php");
           <h4>Nuestra oficina</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In inventore corporis architecto? Dicta quod, non.</p>
           <br>
-          <h4>telefonos</h4>
+          <h4>Telefonos</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In inventore corporis architecto? Dicta quod, non.</p>
         </article>
       </div>
@@ -69,7 +69,7 @@ include_once ("header.php");
     </div>
     <div class="form-group col-md-8">
       <label for="inputEmail4">Comentario</label>
-      <textarea name="name" rows="4" cols="50" class="comentario">Escribí tu compentario acá...</textarea>
+      <textarea name="name" rows="4" cols="50" class="comentario">Escribí tu comentario acá...</textarea>
     </div>
   </div>
 

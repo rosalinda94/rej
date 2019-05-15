@@ -68,7 +68,7 @@ nav ul li a:hover {
 
 /* ------------------------- Home  ------------------------ */
 .home{
-  background-image:  url(../img/fondo.jpg);
+  background-image:  url(../img/fondo.png);
   background-size: cover;
   height: 90vh;
   padding: 13%;

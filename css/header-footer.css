@@ -1,0 +1,112 @@
+/* ------------------------- Inicio Header & Footer ------------------------- */
+.header,
+.footer{
+  background: #000;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+
+.rmobile {
+  display: none;
+}
+
+.links,
+.redes{
+  text-decoration: none;
+}
+
+.footer {
+ flex-direction: column;
+  align-items: center;
+}
+
+.redes ul {
+  justify-content: center;
+}
+.redes a {
+  padding-right: 2%;
+}
+
+.redes a i{
+  color: white;
+}
+
+.redes a i:hover{
+  color: #00aaa9;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+}
+
+ nav ul li {
+  font-family: 'oswald', sans-serif;
+  font-size: 16px;
+  list-style:none;
+  text-transform: uppercase;
+}
+
+.logo li a{
+  padding: 0;
+}
+.logo li a img{
+  width: 50px;
+  margin: 10px;
+}
+
+nav ul li a {
+  padding: 20px 10px;
+  color: #fff;
+}
+
+nav ul li a:hover {
+  color: #00aaa9;
+}
+
+
+/* -------------------------  FIN Header & Footer ------------------------- */
+/* ------------------------- Inicio Responsive celular --------------------- */
+@media (max-width:700px){
+
+  /* -------------------------  Header & Footer ------------------------- */
+
+  .links{
+    display: none;
+  }
+
+  .rmobile li ul{
+    display: none;
+    position: absolute;
+    min-width: 140px;
+  }
+
+  .rmobile li:hover ul{
+    display: block;
+  }
+  .rmobile li ul li {
+    position: relative;
+  }
+  .rmobile {
+    display: block;
+    float: right;
+  }
+  .hamburgesa {
+    padding: 5px 80px;
+  }
+  .hamburgesa ul li {
+    width: 90%;
+    text-align: center;
+    margin-top: 1%;
+  }
+
+  .rmobile ul li a {
+    display: block;
+    color: #fff;
+    background-color: #00aaa9;
+  }

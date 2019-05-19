@@ -8,44 +8,89 @@ include_once ("header.php");
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <title>BUDDY</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <title>MiClub</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/estilo.css">
   </head>
 
   <body>
     <section class="home">
       <article>
-        <img src="img/logo2-01.png" alt="logo">
+        <img src="img/logo-nombre.png" alt="logo">
         <h1 class="web">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Tu equipo, más cerca que nunca
         </h1>
         <h1 class="mobile">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Tu equipo, más cerca que nunca
         </h1>
       </article>
     </section>
 
     <section class="nosotros">
-      <h2>Sobre nosotros</h2>
+      <h2>¿Quiénes somos?</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Somos una Red Social que ayuda a los clubes a comunicarse con sus socios y que los mismos estén atentos y conectados a todas las noticias nuevas de la institución. El socio contará con las distintas opciones de contacto, eligiendo sus actividades favoritas y siguiéndolas minuto a minuto.
       </p>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Nuestro objetivo es lograr que los socios estén conectados en todo momento, que puedan recordar experiencias pasadas, que conozcan sus beneficios y participantes nuevos, como así también conozcan las modificaciones o información importante administrativa. Contectate a través de la computadora o del celular mediante funciones conocidas como grupos, chat y conversaciones instantáneas.
       </p>
     </section>
+
+    <div class="Einfo">
+    <section class="Ecomunicacion">
+      <article class="texto">
+        <h3>Comunicate de manera instantánea en cualquier momento y lugar</h3>
+        <p>Terminá con las cadenas de correos electrónicos gracias a las publicaciones instantáneas. </p>
+        <p>Conéctate con tus socios como así con tus empleados a través de las distintas opciones de MiClub.
+        </p>
+      </article>
+      <article class="icono">
+        <img src="img/icono1.png" alt="icono">
+      </article>
+    </section>
+
+    <section class="EcomunicacionBlanco">
+      <article class="textoIzq">
+        <h3>La información que necesitas saber</h3>
+        <p>En la sección de noticias podrás visualizar todas las publicaciones de personas y proyectos que te interesan.</p>
+        <p>De esta manera, podrás mantenerte al tanto de las novedades importantes de la institución como así de las personas que vos quieras.
+        </p>
+      </article>
+      <article class="icono">
+        <img src="img/icono2.png" alt="icono">
+      </article>
+    </section>
+
+    <section class="Ecomunicacion">
+      <article class="texto">
+        <h3>Tu grupo favorito</h3>
+        <p>Los grupos son espacios privados para debatir, compartir documentos y opinar juntos. Se dividen en las secciones elegidas por la institución, separando así sus deportes como actividades.</p>
+        <p>Siendo parte del mismo, podrás enterarte información exclusiva de dicho grupo.
+        </p>
+      </article>
+      <article class="icono">
+        <img src="img/icono3.png" alt="icono">
+      </article>
+    </section>
+    </div>
+
     <section class="contacto">
         <div class="izquierda">
         <article class="contactos">
           <h2>Conoce más</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+          <p>Si tenés alguna duda sobre nuestro servicio, podes escribirnos dejandonos tus datos y nombre de la institución. </p>
         </article>
         <article class="datos">
           <h4>Nuestra oficina</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In inventore corporis architecto? Dicta quod, non.</p>
+          <p>Leandro N. Alem, 855, piso 27 <br>
+            1006 CABA,<br>
+            Argentina</p>
           <br>
           <h4>Telefonos</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In inventore corporis architecto? Dicta quod, non.</p>
+          <p>0800-999-2343<br>
+            Lunes a viernes de 9:00 a 18:00hs</p>
         </article>
       </div>
 

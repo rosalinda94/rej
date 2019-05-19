@@ -1,0 +1,65 @@
+/* ------------------------- Inicio Login & Registro ------------------------ */
+.login,
+.register{
+  display: flex;
+  justify-content: center;
+  height: 84vh;
+  background-image: url(../img/fondo-principal.png);
+  background-size: contain;
+  text-align: center;
+}
+
+.login {
+  padding: 3% 4%;
+}
+.register {
+  padding: 2%;
+}
+
+#login,
+#register{
+  margin: 0 auto;
+  width: 470px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  padding: 2% ;
+}
+
+.login h2,
+.register h2{
+  color: #00aaa9;
+}
+
+#boton,
+#boton-face{
+  text-decoration: none;
+  font-family: 'roboto', sans-serif;
+  font-size: 20px;
+  width:100%;
+  color: #ffffff;
+  box-shadow: 3px 3px 10px  #878786;
+}
+
+#boton,
+#boton-face{
+  background-color: #00aaa9;
+}
+
+
+#boton:hover,
+#boton-face:hover{
+  background-color: #000;
+}
+
+.condiciones{
+  font-size: 12px;
+  color: #525A6B;
+}
+
+.login p,
+.register p{
+  margin: 1%;
+}
+/* ------------------------- Fin Login & Registro ------------------------ */

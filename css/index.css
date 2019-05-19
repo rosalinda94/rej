@@ -1,0 +1,273 @@
+
+/* ------------------------- Home  ------------------------ */
+.home{
+  background-image:url(../img/fondo-principal.png);
+  background-size: cover;
+  height: 90vh;
+  padding: 13%;
+  margin: 0;
+}
+
+.home img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding-bottom: 5%;
+}
+
+.home h1 {
+  color: #fff;
+  text-align: center;
+}
+
+.home .mobile,
+.rmobile{
+  display: none;
+}
+
+/* ------------------------- Nosotros  ------------------------ */
+.nosotros {
+  padding: 5% 25% 5% 25%;
+  color: #00aaa9;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nosotros h2 {
+  text-align: center;
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.nosotros p {
+  text-align: center;
+  text-justify:auto;
+  margin-top: 2.5%;
+  font-weight: 300;
+}
+
+/* ------------------------- Ecomunicacion  ------------------------ */
+
+.Ecomunicacion,
+.EcomunicacionBlanco {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%
+}
+
+.Ecomunicacion {
+  background-color: #ececec;
+  flex-direction: row;
+}
+.EcomunicacionBlanco{
+  background-color: #fff;
+  flex-direction: row-reverse;
+}
+
+.Einfo .texto {
+  width: 50%;
+  padding-right: 5%;
+}
+
+.Einfo .textoIzq {
+  width: 50%;
+  padding-left: 5%;
+}
+
+.Einfo h3 {
+  margin-bottom: 7%;
+}
+
+.Einfo .icono {
+    width: 40%;
+}
+
+.Einfo img {
+   width: 90%;
+}
+/* ------------------------- Contactanos  ------------------------ */
+
+.contacto {
+  background-image: url(../img/fondo-contacto.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  height: 100vh;
+}
+
+.contacto .izquierda {
+color: #fff;
+margin-right:8%;
+}
+
+.contacto .izquierda .contactos h2 {
+text-transform: uppercase;
+font-weight: bold;
+}
+
+.contacto .izquierda .contactos p {
+  font-weight: 300;
+}
+
+.contacto .izquierda .datos {
+  padding-top: 2.5%;
+}
+.contacto .izquierda .datos h4 {
+  font-weight: 500;
+}
+
+.contacto .izquierda .datos p{
+  font-weight: 300;
+}
+
+.contacto .derecha{
+background-color: #fff;
+padding: 2.5%;
+width: 70%;
+color:#878786;
+font-weight: 300;
+}
+
+.contacto .derecha h2 {
+  color:#00aaa9;
+  text-transform: uppercase;
+}
+
+.contacto .derecha .nombres{
+  display: flex;
+}
+
+.comentario{
+  border: none;
+  border-bottom: 1px solid #878786;
+}
+
+.primary {
+  background-color: #00aaa9;
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  width: 30%;
+  padding: 2%;
+  box-shadow: 3px 3px 10px  #878786;
+}
+
+.primary:hover {
+  background-color: #000;
+}
+
+
+/* ------------------------- Fin Home Nosotros & Contactanos ---------------- */
+
+/* ------------------------- Inicio Responsive celular --------------------- */
+@media (max-width:700px){
+
+/* ------------------------- Home  ------------------------ */
+.home{
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home img {
+  width: 80%;
+}
+.home h1 {
+  font-size: 30px;
+}
+
+.home .mobile {
+  display: block;
+  text-align: center;
+}
+
+.home .web {
+  display: none;
+}
+
+
+/* ------------------------- Nosotros  ------------------------ */
+.nosotros {
+  padding: 8%;
+}
+
+.nosotros h2 {
+  font-size: 30px;
+}
+
+
+/* ------------------------- Ecomunicacion  ------------------------ */
+
+.Ecomunicacion,
+.EcomunicacionBlanco {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+  flex-direction: column;
+}
+
+.Einfo .texto,
+.Einfo .textoIzq {
+  width: 90%;
+  margin: 5%;
+  padding: 5%;
+  text-align: center;
+}
+
+.Einfo h3 {
+  margin-bottom: 7%;
+}
+
+.Einfo .icono {
+    width: 40%;
+}
+
+.Einfo img {
+   width: 100%;
+}
+
+/* ------------------------- Contactanos  ------------------------ */
+
+
+.contacto {
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  height: 130vh;
+
+}
+.contacto .izquierda {
+margin: 0;
+text-align: center;
+padding: 8%;
+}
+
+.contacto .derecha{
+  width: 100%;
+
+  margin: 0;
+  padding:5%;
+}
+
+.contacto .derecha h2{
+text-align: center;
+}
+
+.form-contacto{
+align: center;
+}
+
+.comentario {
+  width: 100%;
+}

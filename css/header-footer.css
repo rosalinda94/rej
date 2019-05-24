@@ -6,7 +6,10 @@
   display: flex;
   flex-direction: row;
   color: white;
+  justify-content: space-between;
+  padding: 0 3% 0 1%;
 }
+
 
 .rmobile {
   display: none;
@@ -14,7 +17,12 @@
 
 .links,
 .redes{
+  justify-content: flex-end;
   text-decoration: none;
+}
+
+.logo{
+  justify-content: flex-start;
 }
 
 .footer {

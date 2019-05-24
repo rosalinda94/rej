@@ -3,7 +3,6 @@
 .register{
   display: flex;
   justify-content: center;
-  height: 84vh;
   background-image: url(../img/fondo-principal.png);
   background-size: contain;
   text-align: center;
@@ -11,6 +10,7 @@
 
 .login {
   padding: 3% 4%;
+  height: 84vh;
 }
 .register {
   padding: 2%;

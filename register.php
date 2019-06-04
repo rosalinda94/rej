@@ -113,7 +113,7 @@ if (!empty($_POST)) {
     $user=$_POST['email'];
     $_SESSION["nombre"]=$user;
 
-    redirect('index.php');
+    redirect('login.php');
 
   }
 }

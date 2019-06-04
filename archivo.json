@@ -16,5 +16,14 @@
         "actividad": "hc",
         "email": "ros@gmail.com",
         "password": "$2y$10$3Ch4oobLGhm4xjWdrVm\/deJ.iXM\/mQKjsAjoirV1h3Dao3qxI.wX6"
+    },
+    {
+        "nombre": "emilia",
+        "apellido": "Segura",
+        "socio": "38536559",
+        "avatar": "uploads\/f21d6978126df23e2ff1e0f433789ed6.png",
+        "actividad": "hc",
+        "email": "emilia_segura@hotmail.com",
+        "password": "$2y$10$Hwl64.kIwgRD2uvGD\/9zpOc.Il7fsQc.pTRgx20Hcafw9.6czOrQ2"
     }
 ]

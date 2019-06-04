@@ -23,7 +23,7 @@ if (!empty($_POST)) {
   if (buscarUsuario($_POST['email'], $_POST['password'])) {
         $_SESSION['nombre']=$_POST['email'];
         echo $_SESSION['nombre'] ;
-      //  redirect('index.php');
+     redirect('home.php');
   } else {
 
   }

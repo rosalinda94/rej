@@ -7,7 +7,7 @@
       <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
       <link rel="stylesheet" href="css/header-footer.css">
 
-  <title>Iniciar sesión</title>
+  <title>MiClub</title>
   <link rel="stylesheet" href="css/login-register.css">
   <link rel="stylesheet" href="css/estilo.css">
 </head>

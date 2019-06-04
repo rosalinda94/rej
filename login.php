@@ -1,7 +1,7 @@
 <?php
-session_start();
 
 require 'funciones.php';
+
 
 $errors=[];
 
@@ -21,20 +21,19 @@ function buscarUsuario($email, $pass) {
 
 if (!empty($_POST)) {
   if (buscarUsuario($_POST['email'], $_POST['password'])) {
-        $_SESSION['user']=$user;
-        redirect('home.php');
+        $_SESSION['nombre']=$_POST['email'];
+        echo $_SESSION['nombre'] ;
+      //  redirect('index.php');
   } else {
 
   }
 }
-
 
  ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <?php include_once 'head.php'; ?>
-
 
   <body>
     <?php include_once 'header.php'; ?>
@@ -60,7 +59,7 @@ if (!empty($_POST)) {
         <article class="condiciones">
           <p> <br>Al continuar aceptas las <b>Condiciones del servicio </b> y la
             <b>Política de la privacidad </b> de MiClub </p>
-          <p><b>¿Olvidaste tu contraseña?</b></p>
+          <p><b><a href="password.php">¿Olvidaste tu contraseña?</a></b></p>
           <p><b>¿Aún no sos parte de MiClub? <a href="register.php">Registrate</a></b></p>
           </article>
         </article>
@@ -68,9 +67,6 @@ if (!empty($_POST)) {
       </form>
     	</article>
     </section>
-
-
-
     <?php
     include_once 'footer.php';
      ?>

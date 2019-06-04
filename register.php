@@ -111,10 +111,9 @@ if (!empty($_POST)) {
     file_put_contents('archivo.json',$json);
 
     $user=$_POST['email'];
-    session_start();
-    $_SESSION["email"]=$user;
+    $_SESSION["nombre"]=$user;
 
-    redirect('home.php');
+    redirect('index.php');
 
   }
 }
@@ -145,29 +144,32 @@ if (!empty($_POST)) {
           <p> <?= $errors['socio'][0] ?? '' ?> </p>
           <p> <?= $errors['coincidirsocio'][0] ?? '' ?> </p>
         </div>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="email" placeholder="Email"  name="email" value="<?= $_POST['email'] ?? ''?>">
+        <p> <?= $errors['email'][0] ?? '' ?> </p>
+        <p> <?= $errors['coincidirmail'][0] ?? '' ?> </p>
+      </div>
         <div class="form-group">
-          <label for="actividad">Actividades</label>
-          <select class="" name="actividad" value="<?= $_POST['actividad'] ?? ''?>">
-            <option value=""></option>
+          <select class="custom-select d-block w-100" name="actividad" value="<?= $_POST['actividad'] ?? ''?>">
+            <option disabled selected>Actividad Favorita</option>
             <option value="ft" <?= (isset($_POST['actividad']) && $_POST['actividad']=='ft')? 'selected' : '' ?>>Futbol</option>
             <option value="hc" <?= (isset($_POST['actividad']) && $_POST['actividad']=='hc')? 'selected' : '' ?>>Hockey</option>
             <option value="bq" <?= (isset($_POST['actividad']) && $_POST['actividad']=='bq')? 'selected' : '' ?>>Basquet</option>
           </select>
           <p>  <?= $errors['actividad'][0] ?? '' ?> </p>
-        </div>
         <div class="form-group">
-          <input type="text" class="form-control" id="email" placeholder="Email"  name="email" value="<?= $_POST['email'] ?? ''?>">
-          <p> <?= $errors['email'][0] ?? '' ?> </p>
-          <p> <?= $errors['coincidirmail'][0] ?? '' ?> </p>
-        </div>
+          <p align="left">Selecciona tu imagen de perfil</p>
           <input type="file" id="avatar" placeholder="avatar"  name="avatar">
           <p> <?= $errors['avatar'][0] ?? '' ?> </p>
-
+        </div>
+        <div class="form-group">
+          <p align="left">Ingresa tu sexo: </p>
           <input type="radio" name="sexo" value="f"> Femenino
           <input type="radio" name="sexo" value="m"> Masculino
+          <input type="radio" name="sexo" value="n"> No definido
           <p> <?= $errors['sexo'][0] ?? '' ?> </p>
-          <br>
-
+        </div>
         <div class="form-group">
           <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
           <p> <?= $errors['password'][0] ?? '' ?> </p>
@@ -189,5 +191,8 @@ if (!empty($_POST)) {
       </form>
     	</article>
     </section>
+    <?php
+    include_once ("footer.php");
+     ?>
   </body>
 </html>

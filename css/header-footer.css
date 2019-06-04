@@ -2,14 +2,18 @@
 .header,
 .footer{
   background: #000;
-  height: 10vh;
   display: flex;
   flex-direction: row;
   color: white;
   justify-content: space-between;
-  padding: 0 3% 0 1%;
+  padding: 0 3% 0 2%;
 }
 
+.header{
+  position: fixed;
+  width: 100%;
+  background: RGBA(0,0,0,0.7);
+}
 
 .rmobile {
   display: none;
@@ -21,20 +25,14 @@
   text-decoration: none;
 }
 
-.logo{
+.logo,
+.empresa{
   justify-content: flex-start;
 }
 
-.footer {
- flex-direction: column;
-  align-items: center;
-}
-
-.redes ul {
-  justify-content: center;
-}
 .redes a {
-  padding-right: 2%;
+  margin-right:  20%;
+  margin-top: 10%;
 }
 
 .redes a i{

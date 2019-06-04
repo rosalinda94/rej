@@ -10,10 +10,3 @@
   p{
     font-family: "roboto", sans-serif;
   }
-
-
-/* ------------------------- Login & Registro ------------------------ */
-#login,
-#register{
-  width: 380px;
-}

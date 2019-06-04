@@ -1,21 +1,4 @@
 /* ------------------------- Inicio Login & Registro ------------------------ */
-.login,
-.register{
-  display: flex;
-  justify-content: center;
-  background-image: url(../img/fondo-principal.png);
-  background-size: contain;
-  text-align: center;
-}
-
-.login {
-  padding: 3% 4%;
-  height: 84vh;
-}
-.register {
-  padding: 2%;
-}
-
 #login,
 #register{
   margin: 0 auto;
@@ -26,6 +9,25 @@
   background-color: white;
   padding: 2% ;
 }
+
+.login,
+.register{
+  display: flex;
+  justify-content: center;
+  background-image: url(../img/fondo-principal.png);
+  background-size: contain;
+  text-align: center;
+}
+
+.login {
+  padding: 8% 4% 2%;
+  height: 92vh;
+}
+
+.register{
+  padding: 8% 4% 2%;
+}
+
 
 .login h2,
 .register h2{
@@ -47,7 +49,6 @@
   background-color: #00aaa9;
 }
 
-
 #boton:hover,
 #boton-face:hover{
   background-color: #000;
@@ -63,3 +64,10 @@
   margin: 1%;
 }
 /* ------------------------- Fin Login & Registro ------------------------ */
+/* ------------------------- Inicio Responsive celular --------------------- */
+@media (max-width:700px){
+  .register,
+  .login{
+    padding: 20% 4% 2%;
+  }
+}

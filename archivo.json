@@ -1,20 +1,20 @@
 [
     {
-        "nombre": "Rosa",
-        "apellido": "rivera",
-        "socio": "1909",
-        "avatar": "uploads\/2760735506a5bc187a35f6c829fae70d.jpg",
-        "actividad": "hc",
-        "email": "emilia_seguraa@hotmail.com",
-        "password": "$2y$10$oETQT01w.YqO9r7YRc00H.R1O6yx\/ndsWHQ1sPYBuGADb3NL9atjq"
+        "nombre": "Rosalinda",
+        "apellido": "Rivera",
+        "socio": "1904",
+        "avatar": "uploads\/fd3705fcba8a3083e79d020b044dd32e.jpeg",
+        "actividad": "ft",
+        "email": "rosalinda9430@gmail.com",
+        "password": "$2y$10$ds4PQBXRnsLJ3l7.c.RA1Odn7oF0wSJvglYOu6YHFTqbBRV9yg8i."
     },
     {
-        "nombre": "Laura",
-        "apellido": "Rabino",
-        "socio": "13334",
-        "avatar": "uploads\/2760735506a5bc187a35f6c829fae70d.jpg",
-        "actividad": "ft",
-        "email": "emilia_segura@hotmail.com",
-        "password": "$2y$10$SnO1r7coLvt4LAfB2iVML.u61FVx84BtsJ8kkEAAMafCkA3j1bUmm"
+        "nombre": "ros",
+        "apellido": "ros",
+        "socio": "234",
+        "avatar": "uploads\/fd3705fcba8a3083e79d020b044dd32e.jpeg",
+        "actividad": "hc",
+        "email": "ros@gmail.com",
+        "password": "$2y$10$3Ch4oobLGhm4xjWdrVm\/deJ.iXM\/mQKjsAjoirV1h3Dao3qxI.wX6"
     }
 ]

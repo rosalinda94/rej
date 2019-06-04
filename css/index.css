@@ -3,7 +3,7 @@
 .home{
   background-image:url(../img/fondo-principal.png);
   background-size: cover;
-  height: 90vh;
+  height: 100vh;
   padding: 13%;
   margin: 0;
 }
@@ -25,7 +25,9 @@
 .rmobile{
   display: none;
 }
-
+p{
+  text-align: justify;
+}
 /* ------------------------- Nosotros  ------------------------ */
 .nosotros {
   padding: 5% 25% 5% 25%;
@@ -45,8 +47,7 @@
 }
 
 .nosotros p {
-  text-align: center;
-  text-justify:auto;
+  text-align: justify;
   margin-top: 2.5%;
   font-weight: 300;
 }

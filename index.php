@@ -1,19 +1,15 @@
 <?php
 include_once ("header.php");
- ?>
+include_once ("head.php");
 
+
+ ?>
 
  <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
-    <title>MiClub</title>
+
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/estilo.css">
-  </head>
+
 
   <body>
     <section class="home">
@@ -27,10 +23,15 @@ include_once ("header.php");
         </h1>
       </article>
     </section>
-
+    <a id="nosotros"></a>
     <section class="nosotros">
       <h2>¿Quiénes somos?</h2>
       <p>
+        <?php
+        if(isset($_SESSION['nombre'])){
+          echo $_SESSION['nombre'];
+        }
+         ?>
         Somos una Red Social que ayuda a los clubes a comunicarse con sus socios y que los mismos estén atentos y conectados a todas las noticias nuevas de la institución. El socio contará con las distintas opciones de contacto, eligiendo sus actividades favoritas y siguiéndolas minuto a minuto.
       </p>
       <p>
@@ -76,6 +77,7 @@ include_once ("header.php");
     </section>
     </div>
 
+<a id="contacto"></a>
     <section class="contacto">
         <div class="izquierda">
         <article class="contactos">

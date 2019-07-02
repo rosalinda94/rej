@@ -1,0 +1,40 @@
+.header{
+  margin-top: 0;
+  height: 50px;
+}
+
+.header-izq {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: space-between;
+  padding: 0 1% 0 1%;
+}
+
+.header-der {
+  padding-right: 0;
+}
+.header-der input{
+  background-color: rgba(0, 0, 0, 0);
+  color: #878786;
+  border: none;
+  border-bottom: 1px solid #878786;
+  margin-right:3%;
+}
+
+.logo li a img{
+  width: 30px;
+  margin-left: 2%;
+}
+.profile-picture img{
+  width: 35px;
+  border-radius: 50%;
+}
+
+.notification-picture img{
+  width: 35px;
+}
+
+.emobile-home {
+  display: none;
+}

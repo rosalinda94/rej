@@ -6,31 +6,41 @@ $errors=[];
 $encontrado=0;
 
 if (!empty($_POST)) {
-        // Busco el json
-        $archivo= file_get_contents("archivo.json");
-        // Lo coloco como array
-        $usuarios= json_decode($archivo, true);
-        // Recorro el array
-        foreach ($usuarios as $key => $usuario){
-          if($usuario["email"]==$_POST["email"] && $usuario["socio"]==$_POST["socio"] ){
-            //Modifico la contraseña del usuario
-            $usuarios[$key]['password']=  password_hash($_POST['password'],PASSWORD_DEFAULT);
-            // coloco una variable para saber si se encontro y luego poder hacer el if
-            $encontrado = 1;
-            break;
-          }
-        }
-        //Hago el if de que si encontrado tiene algun valor me pase el array a json y se suba
-        if ($encontrado!=0){
-        $json= json_encode($usuarios, JSON_PRETTY_PRINT);
-        file_put_contents('archivo.json',$json);
+  $email=$_POST['email'];
+  $partner=$_POST['socio'];
+  $password=$_POST['password'];
 
-        $errors[]="Contraseña modificada sastifactoriamente";
-      }else{
-        $errors[]= "Los datos del socio no son correctos";
+  function buscarUsuario($email, $partner, $password) {
+  /*CONSULTO EN LA BASE DE DATOS SI EXISTEN ESTOS CAMPOS*/
+    $db= conexion();
+    // Busco al usuario
+    $socios = $db-> prepare("SELECT email,partner  FROM person WHERE email=:email");
+    $socios->bindValue(":email", $email);
+    $socios->execute();
 
+    foreach ($socios as $socio){
+      if($socio["email"]==$email && $socio["partner"]==$partner ){
+        $pass= password_hash($password,PASSWORD_DEFAULT);
+        //Modifico la contraseña
+
+        $update = $db-> prepare("UPDATE users SET password=$pass WHERE email= :email");
+        $update->bindValue(":email", $email);
+        $update->execute();
+
+        // Ingreso en la tabla login el cambio de contraseña
+        $user = $db-> prepare("INSERT INTO login (id, email, action, date)
+        VALUES (null,:email, 'Modifico Contraeña',NOW())");
+        $user->bindValue(":email", $email);
+        $user->execute();
+        return $socio;
       }
-
+    }
+  }
+  if (buscarUsuario($email, $partner, $password)) {
+     header('location:index.php');
+  } else {
+    $errors[]='Socio no registrado';
+  }
 }
 
  ?>

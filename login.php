@@ -4,7 +4,7 @@ require 'funciones.php';
 
 
 $errors=[];
-
+/* Comento el json
 function buscarUsuario($email, $pass) {
   $archivo= file_get_contents("archivo.json");
 
@@ -15,17 +15,39 @@ function buscarUsuario($email, $pass) {
       return $usuario;
     }
   }
-
   return null;
-}
+}*/
 
 if (!empty($_POST)) {
-  if (buscarUsuario($_POST['email'], $_POST['password'])) {
-        $_SESSION['nombre']=$_POST['email'];
-        echo $_SESSION['nombre'] ;
-     redirect('home.php');
-  } else {
 
+$email=$_POST['email'];
+$password=$_POST['password'];
+
+    function buscarUsuario($email, $pass) {
+    /*CONSULTO EN LA BASE DE DATOS SI EXISTEN ESTOS CAMPOS*/
+      $db= conexion();
+      $socios = $db-> prepare("SELECT id, email, password FROM users WHERE email=:email");
+      $socios->bindValue(":email", $email);
+      $socios->execute();
+
+      foreach ($socios as $socio){
+        if($socio["email"]==$email && password_verify($pass, $socio['password'])){
+
+          $db= conexion();
+          $user = $db-> prepare("INSERT INTO login (id, email, action, date)
+          VALUES (null,:email, 'ingreso',NOW())");
+          $user->bindValue(":email", $email);
+          $user->execute();
+          return $socio;
+        }
+      }
+    }
+
+  if (buscarUsuario($email, $password)) {
+
+     header('location:index.php');
+  } else {
+    $errors[]='Socio no registrado';
   }
 }
 

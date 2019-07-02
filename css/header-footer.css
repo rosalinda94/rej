@@ -12,7 +12,8 @@
 .header{
   position: fixed;
   width: 100%;
-  background: RGBA(0,0,0,0.7);
+  margin-top: 15px;
+  background: RGBA(0,0,0);
 }
 
 .rmobile {
@@ -40,7 +41,7 @@
 }
 
 .redes a i:hover{
-  color: #00aaa9;
+  color: #3e314f;
 }
 
 nav ul {
@@ -72,7 +73,11 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #00aaa9;
+  color: #3e314f;
+}
+
+footer{
+  height: 20px;
 }
 
 

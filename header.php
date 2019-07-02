@@ -1,8 +1,6 @@
 <?php
 include_once ("head.php");
-if(isset($_SESSION['nombre'])){
-  session_start();
-}
+
 
  ?>
     <header>

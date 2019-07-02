@@ -2,7 +2,7 @@
     <footer>
       <nav  class="footer">
       <div class="empresa">
-        <em>2019 Mi Club. <br> Todos los derechos reservados.</em>
+        <p>2019 Mi Club. Todos los derechos reservados.</p>
       </div>
       <div class="redes">
         <ul>

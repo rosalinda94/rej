@@ -2,7 +2,19 @@
 function redirect ($url) {
   header ('location: ' . $url);
 }
+/*CONEXION A LA BASE DE DATOS */
+function conexion(){
+  try {
+    $pdo= new PDO('mysql:host=localhost;dbname=miClub','root', 'root');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $pdo;
 
+  } catch (\Exception $e) {
+    return true;
+  }
+}
+
+/* COMENTO EL JSON
 function archivo($archivo, $contenido) {
     $json = json_encode([$contenido], JSON_PRETTY_PRINT);
 
@@ -15,9 +27,10 @@ function archivo($archivo, $contenido) {
 
         $json = json_encode($json, JSON_PRETTY_PRINT);
     }
-    
+
     file_put_contents($archivo, $json);
-}
+}*/
+
 
 
  ?>

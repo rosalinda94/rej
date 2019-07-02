@@ -14,13 +14,14 @@ include_once ("head.php");
   <body>
     <section class="home">
       <article>
-        <img src="img/logo-nombre.png" alt="logo">
-        <h1 class="web">
+        <img src="img/logo-blanco.png" alt="logo">
+        <h1>MI CLUB</h1>
+        <h2 class="web">
           Tu equipo, más cerca que nunca
-        </h1>
-        <h1 class="mobile">
+        </h2>
+        <h class="mobile">
           Tu equipo, más cerca que nunca
-        </h1>
+        </h2>
       </article>
     </section>
     <a id="nosotros"></a>
@@ -102,20 +103,20 @@ include_once ("head.php");
   <div class="form-contacto">
     <div class="nombres">
       <div class="form-group col-md-6">
-        <label for="inputPassword4">Nombre</label>
-        <input type="text" class="form-control" id="inputPassword4" placeholder="Ingresar nombre">
+        <label for="inputPassword4"></label>
+        <input type="text" class="form-control" id="inputPassword4" placeholder="Nombre">
       </div>
       <div class="form-group col-md-6">
-        <label for="inputPassword4">Apellido</label>
-        <input type="text" class="form-control" id="inputPassword4" placeholder="Ingresar apellido">
+        <label for="inputPassword4"></label>
+        <input type="text" class="form-control" id="inputPassword4" placeholder="Apellido">
       </div>
     </div>
     <div class="form-group col-md-12">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Ingresar Email">
+      <label for="inputEmail4"></label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
     </div>
     <div class="form-group col-md-8">
-      <label for="inputEmail4">Comentario</label>
+      <label for="inputEmail4"></label>
       <textarea name="name" rows="4" cols="50" class="comentario">Escribí tu comentario acá...</textarea>
     </div>
   </div>

@@ -1,0 +1,133 @@
+*{
+  margin: 0;
+  padding: 0;
+  color: #575756;
+  }
+
+
+.body {
+  background-color: #dadad9;
+}
+
+.home-logueado {
+  display: flex;
+  padding-top: 50px;
+  justify-content: space-around;
+}
+.home-logueado article {
+  background-color: #fff;
+  padding: 15px;
+  margin: 12px;
+  margin-top: 20px;
+}
+
+.home-logueado p{
+  font-weight: lighter;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+/* ------------------------- aside  ------------------------ */
+
+.aside{
+  width: 260px;
+}
+
+.profile-aside {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px;
+  margin: 0px;
+}
+
+.profile-aside p {
+  margin: 0px;
+  padding: 5px;
+}
+.user-name{
+  color: #662382;
+  margin: 0px;
+}
+
+
+ul li{
+  list-style-type: none;
+  font-weight: lighter;
+  font-size: 13px;
+  line-height: 27px;
+}
+
+i {
+  margin-right: 3%;
+}
+
+/* ------------------------- principal  ------------------------ */
+
+/* casillero publicar */
+
+.principal {
+  width: 700px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.que-pensas {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px;
+  margin: 10px;
+}
+
+.que-pensas .comentario{
+  color: #878786;
+  border: none;
+  border-bottom: 1px solid #878786;
+  padding: 15px;
+}
+
+.que-pensas img {
+  width: 60px;
+  margin: 10px;
+}
+
+/* .custom-file-upload {
+  font-family: 'Oswald', sans-serif;
+  border: none;
+  background-color: #ececec;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+} */
+
+.sentimiento-select{
+  position: relative;
+  font-family: 'Oswald', sans-serif;
+}
+
+.sentimiento-select select {
+  display: none;
+}
+
+/* ------------------------- aside2  ------------------------ */
+
+
+.aside2 {
+  width: 320px;
+}
+/* .archivo{
+  visibility: hidden;
+  width: 0;
+  position: relative;
+} */

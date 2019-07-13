@@ -1,46 +1,55 @@
 <?php
 require 'funciones.php';
-  $errors=[];
+require 'src/Entities/User.php';
 
-if (!empty($_POST)) {
-  $name=$_POST['nombre'];
-  $lastName=$_POST['apellido'];
-  $partner=$_POST['socio'];
-  $sex=$_POST['sexo'];
+if(!empty($_POST)){
+  $user= new User;
+  $user->setNombre($_POST['nombre']);
+  $user->setApellido($_POST['apellido']);
+  $user->setSocio($_POST['socio']);
+  $user->setEmail($_POST['email']);
+  $user->setSexo($_POST['sexo']);
+  $user->setActividad($_POST['actividad']);
+
+
+  $nombre=$_POST['nombre'];
+  $apellido=$_POST['apellido'];
+  $socio=$_POST['socio'];
   $email=$_POST['email'];
-  $activity=$_POST['actividad'];
+  $sexo=$_POST['sexo'];
+  $actividad=$_POST['actividad'];
   $password=$_POST['password'];
 
-  if (!isset($name)) {
+  if (!isset($nombre)) {
     $errors['nombre'][]= 'Falta el campo nombre';
   }
   else {
-    if (empty($name)) {
+    if (empty($nombre)) {
       $errors['nombre'][]= 'El nombre es requerido';
     }
   }
-  if (!isset($lastName)) {
+  if (!isset($apellido)) {
     $errors['apellido'][]= 'Falta el campo apellido';
   }
   else {
-    if (empty($lastName)) {
+    if (empty($apellido)) {
       $errors['apellido'][]= 'El apellido es requerido';
     }
   }
-  if (!isset($activity)) {
+  if (!isset($actividad)) {
     $errors['actividad'][]= 'Falta el campo actividad';
   }
 
-  if (!isset($partner)) {
+  if (!isset($socio)) {
     $errors['socio'][]= 'Falta el campo numero de socio';
   }
   else {
-    if (!is_numeric($partner)) {
+    if (!is_numeric($socio)) {
       $errors['socio'][]= 'Ingrese un valor numerico';
     }
   }
 
-  if (!isset($sex)) {
+  if (!isset($sexo)) {
     $errors['sexo'][]= 'Falta el campo sexo';
   }
 
@@ -87,6 +96,8 @@ if (!empty($_POST)) {
       move_uploaded_file($_FILES['avatar']['tmp_name'], $destino);
     }
   }
+
+
 /* COMENTO EL JSON DE VERIFICAR EMAIL Y PASSWORD
 
     $json = file_get_contents('archivo.json');
@@ -100,47 +111,21 @@ if (!empty($_POST)) {
           $errors['coincidirsocio'][]= 'El socio ya existe';
         }
 }*/
+
+
 /*CONSULTO EN LA BASE DE DATOS SI EXISTEN ESTOS CAMPOS*/
-    $db= conexion();
-    $socios = $db-> prepare("SELECT email FROM users WHERE email=:email");
-    $socios->bindValue(":email", $email);
+if (empty($errors)) {
+  $user= new User;
+  $user->setEmail($_POST['email']);
+  $user->setPassword($_POST['password']);
 
-      $socios->execute();
-      foreach ($socios as  $socio) {
-        $existe=$socio['email'];
-      }
-      if ($existe!=''){
-      $errors['coincidirmail'][]= 'El mail ya existe';
-      }
+  if ($user->buscar()) {
 
+     header('location:profile.php');
+  } else {
+    $errors=true;
+  }
 
-  if (empty($errors)) {
-
-    /* GUARDO EN LA BASE DE DATOS */
-    $password=password_hash($_POST['password'],PASSWORD_DEFAULT);
-      $db= conexion();
-
-      //consulto la base
-      $consulta = $db-> prepare("INSERT INTO person (id, name, lastName, partner, sex, avatar, email)
-      VALUES (null,:name, :lastName, :partner, :sex, :avatar, :email)");
-
-      $consulta->bindValue(":name", $name);
-      $consulta->bindValue(":lastName", $lastName);
-      $consulta->bindValue(":partner", $partner);
-      $consulta->bindValue(":sex", $sex);
-      $consulta->bindValue(":avatar", $hash);
-      $consulta->bindValue(":email", $email);
-
-      $consulta->execute();
-
-      $user = $db-> prepare("INSERT INTO users (id, email, password,created_at)
-      VALUES (null,:email, :password, NOW())");
-
-      $user->bindValue(":email", $email);
-      $user->bindValue(":password",$password);
-
-      $user->execute();
-      redirect('login.php');
 
   /* // COMENTO EL JSON
     $usuarios[]=[

@@ -27,6 +27,10 @@ include_once ("head.php");
           <input type="search" placeholder="Buscar...">
           <li><a href="notification.php"><img src="img/campana1.png" alt=""></a></li>
           <li><a href="profile.php"><img src="img/foto-perfil.jpg" alt=""></a></li>
+          <select class="" name="">
+            <option disabled selected></option>
+            <option value="fel">Feliz</option>
+          </select>
         </ul>
       </nav>
     </header>

@@ -5,7 +5,7 @@ function redirect ($url) {
 /*CONEXION A LA BASE DE DATOS */
 function conexion(){
   try {
-    $pdo= new PDO('mysql:host=localhost;dbname=miClub','root', 'root');
+    $pdo= new PDO('mysql:host=localhost;dbname=miClub','root', '');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $pdo;
 
@@ -13,6 +13,8 @@ function conexion(){
     return true;
   }
 }
+
+
 
 /* COMENTO EL JSON
 function archivo($archivo, $contenido) {

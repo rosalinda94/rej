@@ -1,57 +1,48 @@
 <?php
-
 require 'funciones.php';
+require 'src/Entities/User.php';
+require 'src/Validators/UserValidator.php';
 
+$errors='';
 
-$errors=[];
-/* Comento el json
-function buscarUsuario($email, $pass) {
-  $archivo= file_get_contents("archivo.json");
+if(!empty($_POST)){
+  $user= new User;
+  $user->setEmail($_POST['email']);
+  $user->setPassword($_POST['password']);
 
-  $usuarios= json_decode($archivo, true);
+  if ($user->buscar()) {
+    session_start();
 
-  foreach ($usuarios as $usuario){
-    if($usuario["email"]==$email && password_verify($pass, $usuario['password'])){
-      return $usuario;
-    }
-  }
-  return null;
-}*/
+    $_SESSION[$user];
+        // guardarlo en la variable session
 
-if (!empty($_POST)) {
-
-$email=$_POST['email'];
-$password=$_POST['password'];
-
-    function buscarUsuario($email, $pass) {
-    /*CONSULTO EN LA BASE DE DATOS SI EXISTEN ESTOS CAMPOS*/
-      $db= conexion();
-      $socios = $db-> prepare("SELECT id, email, password FROM users WHERE email=:email");
-      $socios->bindValue(":email", $email);
-      $socios->execute();
-
-      foreach ($socios as $socio){
-        if($socio["email"]==$email && password_verify($pass, $socio['password'])){
-
-          $db= conexion();
-          $user = $db-> prepare("INSERT INTO login (id, email, action, date)
-          VALUES (null,:email, 'ingreso',NOW())");
-          $user->bindValue(":email", $email);
-          $user->execute();
-          return $socio;
-        }
-      }
-    }
-
-  if (buscarUsuario($email, $password)) {
-
-     header('location:index.php');
+    // redirigir
+     header('location:profile.php');
   } else {
-    $errors[]='Socio no registrado';
+    $errors=true;
   }
+
+
+/*
+  try {
+    $pdo= new PDO('mysql:dbname=miclub;host=localhost', 'root', '');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $sql= 'INSERT INTO users (email,password, created_at) VALUES (:email,:password, :created_at)';
+
+    $stmt = $pdo->prepare($sql);
+
+    $stmt->bindValue('email', $user->getEmail());
+    $stmt->bindValue('password',$user->getPassword());
+    $stmt->bindValue('created_at', $user->getRegistrationDate()->format('Y-m-d H:m:s'));
+
+    $result=$stmt->execute();
+  } catch (\Exception $e) {
+    die('Error al guardar en la base de datos');
+  }*/
 }
 
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -71,12 +62,8 @@ $password=$_POST['password'];
         <div class="form-group">
           <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
         </div>
-        <div class="">
-          <?php foreach ($errors as $error) {
-            echo $error;
-            echo '<br>';
-          } ?>
-        </div>
+        <p><?= $errors ? 'No se encontro el usuario' : ''?></p>
+
         <input type="submit" name="boton" value="Iniciar sesión" id="boton"><br>
         <article class="condiciones">
           <p> <br>Al continuar aceptas las <b>Condiciones del servicio </b> y la

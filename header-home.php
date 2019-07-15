@@ -20,6 +20,8 @@ include_once ("head.php");
           <input type="search" placeholder="Buscar...">
           <li><a class="notification-picture" href="notification.php"><img src="img/campana1.png" alt=""></a></li>
           <li><a class="profile-picture" href="profile.php"><img src="img/foto-perfil.jpg" alt=""></a></li>
+
+          <li><a href="index.php" style="text-decoration:none">Salir</a></li>
         </ul>
 
 

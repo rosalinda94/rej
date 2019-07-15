@@ -17,7 +17,7 @@ if(!empty($_POST)){
         // guardarlo en la variable session
 
     // redirigir
-     header('location:profile.php');
+     header('location:home.php');
   } else {
     $errors=true;
   }

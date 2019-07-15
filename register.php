@@ -1,55 +1,50 @@
 <?php
 require 'funciones.php';
 require 'src/Entities/User.php';
+require 'src/Validators/UserValidator.php';
+
+$errors=[];
 
 if(!empty($_POST)){
-  $user= new User;
-  $user->setNombre($_POST['nombre']);
-  $user->setApellido($_POST['apellido']);
-  $user->setSocio($_POST['socio']);
-  $user->setEmail($_POST['email']);
-  $user->setSexo($_POST['sexo']);
-  $user->setActividad($_POST['actividad']);
 
-
-  $nombre=$_POST['nombre'];
-  $apellido=$_POST['apellido'];
-  $socio=$_POST['socio'];
+$name=$_POST['nombre'];
+  $lastName=$_POST['apellido'];
+  $partner=$_POST['socio'];
+  $sex=$_POST['sexo'];
   $email=$_POST['email'];
-  $sexo=$_POST['sexo'];
-  $actividad=$_POST['actividad'];
+  $activity=$_POST['actividad'];
   $password=$_POST['password'];
 
-  if (!isset($nombre)) {
+  if (!isset($name)) {
     $errors['nombre'][]= 'Falta el campo nombre';
   }
   else {
-    if (empty($nombre)) {
+    if (empty($name)) {
       $errors['nombre'][]= 'El nombre es requerido';
     }
   }
-  if (!isset($apellido)) {
+  if (!isset($lastName)) {
     $errors['apellido'][]= 'Falta el campo apellido';
   }
   else {
-    if (empty($apellido)) {
+    if (empty($lastName)) {
       $errors['apellido'][]= 'El apellido es requerido';
     }
   }
-  if (!isset($actividad)) {
+  if (!isset($activity)) {
     $errors['actividad'][]= 'Falta el campo actividad';
   }
 
-  if (!isset($socio)) {
+  if (!isset($partner)) {
     $errors['socio'][]= 'Falta el campo numero de socio';
   }
   else {
-    if (!is_numeric($socio)) {
+    if (!is_numeric($partner)) {
       $errors['socio'][]= 'Ingrese un valor numerico';
     }
   }
 
-  if (!isset($sexo)) {
+  if (!isset($sex)) {
     $errors['sexo'][]= 'Falta el campo sexo';
   }
 
@@ -96,54 +91,41 @@ if(!empty($_POST)){
       move_uploaded_file($_FILES['avatar']['tmp_name'], $destino);
     }
   }
+  $existe='';
+      $db= conexion();
+    $socios = $db-> prepare("SELECT email FROM users WHERE email=:email");
+    $socios->bindValue(":email", $email);
 
-
-/* COMENTO EL JSON DE VERIFICAR EMAIL Y PASSWORD
-
-    $json = file_get_contents('archivo.json');
-  $usuarios = json_decode($json, true);
-
-  foreach ($usuarios as $usuario){
-    if($usuario['email']==$_POST['email']){
-        $errors['coincidirmail'][]= 'El mail ya existe';
+      $socios->execute();
+      foreach ($socios as  $socio) {
+        $existe=$socio['email'];
       }
-    if($usuario['socio']==$_POST['socio']){
-          $errors['coincidirsocio'][]= 'El socio ya existe';
-        }
-}*/
+      if ($existe!=''){
+      $errors['coincidirmail'][]= 'El mail ya existe';
+      }
 
+       if (empty($errors)) {
 
-/*CONSULTO EN LA BASE DE DATOS SI EXISTEN ESTOS CAMPOS*/
-if (empty($errors)) {
   $user= new User;
+  $user->setNombre($_POST['nombre']);
+  $user->setApellido($_POST['apellido']);
+  $user->setSocio($_POST['socio']);
+  $user->setSexo($_POST['sexo']);
   $user->setEmail($_POST['email']);
   $user->setPassword($_POST['password']);
 
-  if ($user->buscar()) {
 
-     header('location:profile.php');
+  if (!$user->buscarUsuarioRegistrado()) {
+     header('location:home.php');
   } else {
-    $errors=true;
-  }
-
-
-  /* // COMENTO EL JSON
-    $usuarios[]=[
-      'nombre'=> $_POST['nombre'],
-      'apellido'=> $_POST['apellido'],
-      'socio'=> $_POST['socio'],
-      'avatar'=> $destino,
-      'actividad'=> $_POST['actividad'],
-      'email'=> $_POST['email'],
-      'password'=> password_hash($_POST['password'],PASSWORD_DEFAULT),
-    ];
-    $json= json_encode($usuarios, JSON_PRETTY_PRINT);
-    file_put_contents('archivo.json',$json);
-    header(index.php)*/
+      $errors='Usuario Registrado';
   }
 }
 
- ?>
+
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -152,7 +134,7 @@ if (empty($errors)) {
     <?php require 'header.php' ?>
     <section class="register">
       <article id="register">
-    		<h2>Te damos la bienvenida a MiCLub</h2>
+        <h2>Te damos la bienvenida a MiCLub</h2>
         <p class="condiciones">Tu equipo más cerca que nunca</p>
       <form class="" action="register.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
@@ -190,8 +172,8 @@ if (empty($errors)) {
         </div>
         <div class="form-group">
           <p align="left">Ingresa tu sexo: </p>
-          <input type="radio" name="sexo" value="F"> Femenino
-          <input type="radio" name="sexo" value="M"> Masculino
+          <input type="radio" name="sexo"  value="F"> Femenino
+          <input type="radio" name="sexo"  value="M"> Masculino
           <input type="radio" name="sexo" value="N"> No definido
           <p> <?= $errors['sexo'][0] ?? '' ?> </p>
         </div>
@@ -206,6 +188,7 @@ if (empty($errors)) {
         <div class="condiciones">
         </div>
         <input type="submit" name="boton" value="Registrarse" id="boton"><br>
+         <p><?= $errors ? 'El mail ya esta registrado' : ''?></p>
 
         <article class="condiciones">
           <p> <br>Al continuar aceptas las <b>Condiciones del servicio </b> y la
@@ -214,7 +197,7 @@ if (empty($errors)) {
         </article>
 
       </form>
-    	</article>
+      </article>
     </section>
     <?php
     include_once ("footer.php");

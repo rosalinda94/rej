@@ -10,10 +10,9 @@ function conexion(){
     return $pdo;
 
   } catch (\Exception $e) {
-    return true;
+    return false;
   }
 }
-
 
 
 /* COMENTO EL JSON

@@ -1,7 +1,12 @@
-<?php
-include_once ("header.php");
-include_once ("head.php");
 
+<?php
+include_once 'funciones.php';
+
+if($db= conexion()==false){
+   echo 'No esta creada la base de datos <b> miClub </b> crearla para poder acceder. Gracias'; exit;
+}
+include_once 'header.php';
+include_once 'head.php';
 
  ?>
 
